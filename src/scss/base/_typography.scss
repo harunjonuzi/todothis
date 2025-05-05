@@ -51,36 +51,36 @@ h4 {
 
 h1,
 .h1 {
-    @include fluid-type(390px, 1440px, 32px, 54px);
     line-height: 1.5;
 
     /* Margin Bottom */
     margin-bottom: rem(25);
+    @include fluid-type(390px, 1440px, 32px, 54px);
 }
 
 h2,
 .h2 {
-    @include fluid-type(390px, 1440px, 32px, 54px);
     line-height: 1.5;
 
     /* Margin Bottom */
-    // margin-bottom: rem(25);
+    margin-bottom: rem(25);
+    @include fluid-type(390px, 1440px, 32px, 54px);
 }
 
 h3,
 .h3 {
-    @include fluid-type(390px, 1440px, 32px, 54px);
     line-height: 1.5;
 
     /* Margin Bottom */
     margin-bottom: rem(25);
+    @include fluid-type(390px, 1440px, 32px, 54px);
 }
 
 h4,
 .h4 {
-    @include fluid-type(390px, 1440px, 32px, 54px);
     line-height: 1.5;
 
     /* Margin Bottom */
     margin-bottom: rem(25);
+    @include fluid-type(390px, 1440px, 32px, 54px);
 }
