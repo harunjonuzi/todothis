@@ -1,4 +1,4 @@
-# Application - Todothis
+# Todothis
 
 📝 Literally the best todolist application in my neighborhood.
 
