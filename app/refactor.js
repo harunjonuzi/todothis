@@ -1,41 +1,31 @@
 "use strict";
 
+// Local Storage Keys
+const LOCAL_STORAGE_LIST_KEY = "task.lists";
+const LOCAL_STORAGE_SELECTED_LIST_KEY = "task.selectedListId";
+
 // DOM Elements
 const elements = {
     asideListsContainer: document.querySelector("[data-aside-lists]"),
     asideNewListForm: document.querySelector("[data-aside-new-list-form]"),
-    asideNewListFormInput: document.querySelector(
-        "[data-aside-new-list-input]"
-    ),
+    asideNewListFormInput: document.querySelector("[data-aside-new-list-input]"),
     asideNewListFormImg: document.querySelector("[data-aside-new-list-img]"),
     asideDeleteListButton: document.querySelector("[data-aside-delete-list]"),
-    asidePermanentListsWrapper: document.querySelector(
-        "[data-aside-permanent-lists]"
-    ),
-    asideCustomListsWrapper: document.querySelector(
-        "[data-aside-custom-lists]"
-    ),
-    mainTasksDisplayContainer: document.querySelector(
-        "[data-main-tasks-container]"
-    ),
+    asidePermanentListsWrapper: document.querySelector("[data-aside-permanent-lists]"),
+    asideCustomListsWrapper: document.querySelector("[data-aside-custom-lists]"),
+    mainTasksDisplayContainer: document.querySelector("[data-main-tasks-container]"),
     mainListTitle: document.querySelector("[data-main-list-title]"),
     mainListCounter: document.querySelector("[data-main-list-count]"),
     mainNewTaskForm: document.querySelector("[data-main-new-task-form]"),
     mainNewTaskInput: document.querySelector("[data-main-new-task-input]"),
     mainNewTaskFormImg: document.querySelector("[data-main-new-task-img]"),
-    mainClearCompletedTasksButton: document.querySelector(
-        "[data-main-clear-tasks]"
-    ),
+    mainClearCompletedTasksButton: document.querySelector("[data-main-clear-tasks]"),
     mainTasksWrapper: document.querySelector("[data-tasks-wrapper]"),
     mainTaskHTMLTemplate: document.getElementById("task-template"),
     svgElementOne: document.querySelector("#svgElement-01"),
     svgElementTwo: document.querySelector("#svgElement-02"),
     svgElementThree: document.querySelector("#svgElement-03"),
 };
-
-// Local Storage Keys
-const LOCAL_STORAGE_LIST_KEY = "task.lists";
-const LOCAL_STORAGE_SELECTED_LIST_KEY = "task.selectedListId";
 
 // Initialize Lists and Selected List ID
 let lists = JSON.parse(localStorage.getItem(LOCAL_STORAGE_LIST_KEY)) || [];
@@ -49,19 +39,13 @@ const upcoming = { id: "30", name: "Upcoming", tasks: [] };
 // Event Listeners
 elements.asideNewListForm.addEventListener("submit", handleNewListSubmit);
 elements.asideNewListFormImg.addEventListener("click", handleNewListSubmit);
-elements.asidePermanentListsWrapper.addEventListener(
-    "click",
-    handleListSelection
-);
+elements.asidePermanentListsWrapper.addEventListener("click", handleListSelection);
 elements.asideCustomListsWrapper.addEventListener("click", handleListSelection);
 elements.asideDeleteListButton.addEventListener("click", handleDeleteList);
 elements.mainNewTaskForm.addEventListener("submit", handleNewTaskSubmit);
 elements.mainNewTaskFormImg.addEventListener("click", handleNewTaskSubmit);
 elements.mainTasksWrapper.addEventListener("click", handleTaskCheckboxClick);
-elements.mainClearCompletedTasksButton.addEventListener(
-    "click",
-    handleClearCompletedTasks
-);
+elements.mainClearCompletedTasksButton.addEventListener("click", handleClearCompletedTasks);
 elements.btnHamburger.addEventListener("click", handleToggleSideMenu);
 
 // Rendering Functions
@@ -86,9 +70,7 @@ function renderLists() {
 
 function renderTasksCount() {
     const selectedList = lists.find((list) => list.id === selectedListId);
-    const incompleteTasksCount = selectedList.tasks.filter(
-        (task) => !task.complete
-    ).length;
+    const incompleteTasksCount = selectedList.tasks.filter((task) => !task.complete).length;
     elements.mainListCounter.innerText = `${incompleteTasksCount} task${
         incompleteTasksCount === 1 ? "" : "s"
     } remaining`;
@@ -97,17 +79,11 @@ function renderTasksCount() {
 function renderGraphics() {
     const selectedList = lists.find((list) => list.id === selectedListId);
     elements.svgElementOne.style.display =
-        selectedList.id === "10" && selectedList.tasks.length === 0
-            ? "block"
-            : "none";
+        selectedList.id === "10" && selectedList.tasks.length === 0 ? "block" : "none";
     elements.svgElementTwo.style.display =
-        selectedList.id === "20" && selectedList.tasks.length === 0
-            ? "block"
-            : "none";
+        selectedList.id === "20" && selectedList.tasks.length === 0 ? "block" : "none";
     elements.svgElementThree.style.display =
-        selectedList.id === "30" && selectedList.tasks.length === 0
-            ? "block"
-            : "none";
+        selectedList.id === "30" && selectedList.tasks.length === 0 ? "block" : "none";
 }
 
 // Other Functions
@@ -170,21 +146,14 @@ function handleNewListSubmit(e) {
 
 function handleListSelection(e) {
     const listElement = e.target.closest("div");
-    if (
-        listElement &&
-        !listElement.classList.contains("aside__lists-permanent")
-    ) {
+    if (listElement && !listElement.classList.contains("aside__lists-permanent")) {
         selectedListId = listElement.dataset.listId;
         saveAndRender();
     }
 }
 
 function handleDeleteList() {
-    if (
-        selectedListId === "10" ||
-        selectedListId === "20" ||
-        selectedListId === "30"
-    ) {
+    if (selectedListId === "10" || selectedListId === "20" || selectedListId === "30") {
         console.log("Cannot delete permanent lists!");
         return;
     }

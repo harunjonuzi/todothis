@@ -1,19 +1,19 @@
 .nav {
     height: 2.5rem;
     width: 100%;
-    background-color: var(--main-third-clr);
+    background-color: var(--dark-clr-3);
     display: flex;
     justify-content: space-between;
     align-items: center;
 
     .nav__left {
         display: flex;
-        padding-left: 0.5rem;
+        padding-left: 0.9rem;
     }
 
     .nav__right {
         display: flex;
         gap: 0.2rem;
-        padding-right: 0.5rem;
+        padding-right: 0.9rem;
     }
 }
