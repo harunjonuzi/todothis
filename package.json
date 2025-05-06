@@ -1,6 +1,6 @@
 {
-    "name": "app-todo-this",
-    "homepage": "https://harunjonuzi.github.io/app-todo-this/",
+    "name": "todothis",
+    "homepage": "https://harunjonuzi.github.io/todothis/",
     "private": true,
     "version": "0.0.0",
     "type": "module",
