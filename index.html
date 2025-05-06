@@ -1,115 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <link rel="icon" type="image/svg+xml" href="svg/vitejs.svg" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <!-- Fonts -->
-        <!-- Font - Google -->
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;600&display=swap"
-            rel="stylesheet"
-        />
-        <!-- Scripts -->
-        <script type="module" src="app/script.js"></script>
-        <title>Todo This</title>
-    </head>
 
-    <body>
-        <nav class="nav">
-            <div class="nav__left">
-                <button class="btn nav__btn hamburger">
-                    <img src="/svg/menu.svg" alt="" />
-                </button>
-            </div>
-            <div class="nav__right">
-                <button class="btn nav__btn sun">
-                    <img src="/svg/sun.svg" alt="" />
-                </button>
-                <button class="btn nav__btn user">
-                    <img src="/svg/user.svg" alt="User icon" />
-                </button>
-            </div>
-        </nav>
-        <div class="wrapper">
-            <aside class="aside" data-aside-lists>
-                <div class="aside__permanents" data-aside-permanent-lists>
-                    <!-- Permanent Lists go here -->
-                </div>
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="svg/vitejs.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Fonts -->
+    <!-- Font - Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;600&display=swap"
+        rel="stylesheet" />
+    <!-- Scripts -->
+    <script type="module" src="app/script.js"></script>
+    <title>Todothis</title>
+</head>
 
-                <div class="aside__customs">
-                    <p class="aside__customs--title">Custom Lists</p>
-
-                    <form action="" data-aside-new-list-form>
-                        <input
-                            type="text"
-                            class="input sidebar__input"
-                            data-aside-new-list-input
-                            placeholder="Add new list"
-                        />
-                        <img src="/svg/plus.svg" alt="" />
-                    </form>
-                </div>
-
-                <div class="aside__lists-custom" data-aside-custom-lists>
-                    <!-- Custom Lists go here -->
-                </div>
-            </aside>
-
-            <main class="main" data-main-tasks-container>
-                <div class="main__header">
-                    <h2 data-main-list-title></h2>
-                    <p data-main-list-count></p>
-
-                    <button class="btn main__btn">
-                        <img src="/svg/sliders.svg" alt="" />
-                    </button>
-
-                    <button class="btn main__btn">
-                        <img src="/svg/message-square.svg" alt="" />
-                    </button>
-
-                    <button class="btn main__btn">
-                        <img src="/svg/more-horizontal.svg" alt="" />
-                    </button>
-                </div>
-
-                <div class="main__tasks" data-tasks-wrapper>
-                    <!-- Tasks go here -->
-                </div>
-
-                <form action="" data-main-new-task-form>
-                    <input maxlength="50" type="text" data-main-new-task-input placeholder="Add new task" />
-                    <img src="/svg/plus.svg" alt="" data-main-task-img />
-                </form>
-
-                <button class="btn main__btn-delete" data-main-clear-tasks>Clear completed tasks</button>
-                <button class="btn main__btn-delete" data-aside-delete-list="">Delete list</button>
-
-                <!-- Display them when tasks are empty -->
-                <div class="main__svg" id="svgElement-01">
-                    <img src="/svg/drawkit5.svg" alt="Workstation Illustration" />
-                    <h3>You have completed all your of tasks!</h3>
-                    <p>
-                        Task planning optimizes time management, leading to higher productivity and better use of your
-                        resources.
-                    </p>
-                </div>
-
-                <div class="main__svg" id="svgElement-02">
-                    <img src="/svg/drawkit8.svg" alt="Workstation Illustration" />
-                    <h3>What do you need to get done today?</h3>
-                    <p>By organizing your day through task planning, you gain a sense of control.</p>
-                </div>
-
-                <div class="main__svg" id="svgElement-03">
-                    <img src="/svg/drawkit10.svg" alt="Workstation Illustration" />
-                    <h3>Start small (or dream big)...</h3>
-                    <p>Track tasks, follow progress, and discuss details in one central, shared project.</p>
-                </div>
-            </main>
+<body>
+    <nav class="nav">
+        <div class="nav__left">
+            <button class="btn nav__btn hamburger">
+                <img src="/svg/menu.svg" alt="" />
+            </button>
         </div>
-    </body>
+        <div class="nav__right">
+            <button class="btn nav__btn sun">
+                <img src="/svg/sun.svg" alt="" />
+            </button>
+            <button class="btn nav__btn user">
+                <img src="/svg/user.svg" alt="User icon" />
+            </button>
+        </div>
+    </nav>
+    <div class="wrapper">
+        <aside class="aside" data-aside-lists>
+            <div class="aside__permanents" data-aside-permanent-lists>
+                <!-- Permanent Lists go here -->
+            </div>
+
+            <div class="aside__customs">
+                <p class="aside__customs--title">Custom Lists</p>
+
+                <form action="" data-aside-new-list-form>
+                    <input type="text" class="input sidebar__input" data-aside-new-list-input
+                        placeholder="Add new list" />
+                    <img src="/svg/plus.svg" alt="" />
+                </form>
+            </div>
+
+            <div class="aside__lists-custom" data-aside-custom-lists>
+                <!-- Custom Lists go here -->
+            </div>
+        </aside>
+
+        <main class="main" data-main-tasks-container>
+            <div class="main__header">
+                <h2 data-main-list-title></h2>
+                <p data-main-list-count></p>
+
+                <button class="btn main__btn">
+                    <img src="/svg/sliders.svg" alt="" />
+                </button>
+
+                <button class="btn main__btn">
+                    <img src="/svg/message-square.svg" alt="" />
+                </button>
+
+                <button class="btn main__btn">
+                    <img src="/svg/more-horizontal.svg" alt="" />
+                </button>
+            </div>
+
+            <div class="main__tasks" data-tasks-wrapper>
+                <!-- Tasks go here -->
+            </div>
+
+            <form action="" data-main-new-task-form>
+                <input maxlength="50" type="text" data-main-new-task-input placeholder="Add new task" />
+                <img src="/svg/plus.svg" alt="" data-main-task-img />
+            </form>
+
+            <button class="btn main__btn-delete" data-main-clear-tasks>Clear completed tasks</button>
+            <button class="btn main__btn-delete" data-aside-delete-list="">Delete list</button>
+
+            <!-- Display them when tasks are empty -->
+            <div class="main__svg" id="svgElement-01">
+                <img src="/svg/drawkit5.svg" alt="Workstation Illustration" />
+                <h3>You have completed all your of tasks!</h3>
+                <p>
+                    Task planning optimizes time management, leading to higher productivity and better use of your
+                    resources.
+                </p>
+            </div>
+
+            <div class="main__svg" id="svgElement-02">
+                <img src="/svg/drawkit8.svg" alt="Workstation Illustration" />
+                <h3>What do you need to get done today?</h3>
+                <p>By organizing your day through task planning, you gain a sense of control.</p>
+            </div>
+
+            <div class="main__svg" id="svgElement-03">
+                <img src="/svg/drawkit10.svg" alt="Workstation Illustration" />
+                <h3>Start small (or dream big)...</h3>
+                <p>Track tasks, follow progress, and discuss details in one central, shared project.</p>
+            </div>
+        </main>
+    </div>
+</body>
+
 </html>
