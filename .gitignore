@@ -1,0 +1,32 @@
+# Node.js
+node_modules/
+
+# Vite
+/dist/
+/build/
+/.vite/
+
+# IDE files
+.DS_Store
+.vscode/
+.idea/
+
+# Compiled files
+*.log
+*.bak
+*.lock
+
+# SCSS cache
+.sass-cache/
+*.css.map
+
+# Dependency directories
+/.pnpm
+.pnp
+/yarn-error.log
+
+# Environment variables
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
